@@ -1,4 +1,7 @@
-﻿using System;
+﻿// DbConnection.cs
+// Provides SQLite database connection string and connection object
+// Used by all Repository classes to connect to db.sqlite
+using System;
 using System.Data.SQLite;
 using System.IO;
 
