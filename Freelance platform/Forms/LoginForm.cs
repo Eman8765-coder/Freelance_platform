@@ -2,7 +2,6 @@
 using Freelance_Platform.Database;
 using Freelance_Platform.Models;
 using System;
-using System.Windows.Forms;
 using Freelance_Platform;
 
 namespace Freelance_Platform.Forms
@@ -46,8 +45,6 @@ namespace Freelance_Platform.Forms
             Freelance_Platform.Session.CurrentUser = user;
             Freelance_Platform.Session.ClientId = _userRepo.GetClientId(user.UserId);
             Freelance_Platform.Session.FreelancerId = _userRepo.GetFreelancerId(user.UserId);
-            // Add this line temporarily after Session is set
-            MessageBox.Show($"UserID: {Session.CurrentUser.UserId}, ClientID: {Freelance_Platform.Session.ClientId}");
             MainForm mainForm = new MainForm();
             mainForm.Show();
             this.Hide();
@@ -57,11 +54,6 @@ namespace Freelance_Platform.Forms
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.ShowDialog();
-        }
-
-        private void LoginForm_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
